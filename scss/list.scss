@@ -1,0 +1,39 @@
+/* .list--margin_left_sm {
+  margin-left: 20px;
+} */
+.list {
+  &_nav {
+    position: relative;
+    top: 5rem;
+    left: 1.5rem;
+    @media (min-width: 992px) {
+      & {
+        display: flex;
+        position: static;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    @media (max-width: 992px) {
+      & li {
+        margin: 2rem 0rem;
+      }
+    }
+  }
+
+  &--list_style_none {
+    list-style: none;
+  }
+  &__item {
+    min-width: 1px;
+    &--hover_red:hover .caption {
+      color: $color--second;
+    }
+  }
+  &--display_flex {
+    display: flex;
+  }
+  &--align_center {
+    align-items: center;
+  }
+}

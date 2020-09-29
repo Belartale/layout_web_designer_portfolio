@@ -1,0 +1,185 @@
+@import "./variables";
+
+$maxWidth: 1280;
+
+@mixin adaptiv-font($pcSize, $modSize) {
+  $addSize: $pcSize - $modSize;
+  $addModSize: $addSize + $addSize * 0.7;
+  @media (max-width: 767px) {
+    font-size: calc(
+      #{$modSize + px} + #{$addModSize} * ((100vw - 320px) / #{$maxWidth})
+    );
+  }
+  @media (min-width: 767px) {
+    font-size: calc(#{$modSize + px} + #{$addSize} * (100vw / #{$maxWidth}));
+  }
+}
+
+@font-face {
+  font-family: HelveticaCE;
+  src: url(../fonts/Helvetica_CE_Regular.ttf);
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: HelveticaNeueLT;
+  src: url(../fonts/HelveticaNeueLT-LightCondObl.otf);
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: Perpetua_Titling_MT;
+  src: url(../fonts/Perpetua_Titling_MT.ttf);
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: HelveticaNeue;
+  src: url(../fonts/HelveticaNeue.ttf);
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: Lobster;
+  src: url(../fonts/Lobster_1.4.otf);
+  font-style: normal;
+  font-weight: normal;
+}
+
+$font--first: HelveticaCE;
+$font--second: HelveticaNeueLT;
+$font--three: Perpetua_Titling_MT;
+$font--four: HelveticaNeue;
+$font--last: Lobster;
+
+.caption {
+  &__element {
+    min-width: 1px;
+  }
+  //! size
+  &--size_1x {
+    @include adaptiv-font(16, 14);
+  }
+  &--size_1 {
+    @include adaptiv-font(57, 30);
+  }
+  &--size_2 {
+    @include adaptiv-font(23, 20);
+  }
+  &--size_3 {
+    @include adaptiv-font(19, 16);
+  }
+  &--size_4 {
+    @include adaptiv-font(14, 12);
+  }
+  &--size_5 {
+    @include adaptiv-font(13, 11);
+  }
+  //! family
+  &--family_first {
+    font-family: $font--first;
+  }
+  &--family_second {
+    font-family: $font--second;
+  }
+  &--family_three {
+    font-family: $font--three;
+  }
+  &--family_four {
+    font-family: $font--four;
+  }
+  &--family_last {
+    font-family: $font--last;
+    font-weight: 100;
+  }
+  //! font-weight
+  &--weight_100 {
+    font-weight: 100;
+  }
+  &--weight_500 {
+    font-weight: 500;
+  }
+  &--weight_900 {
+    font-weight: 900;
+  }
+  //! color
+  &--variant_white {
+    color: $color--white;
+  }
+  &--variant_second {
+    color: $color--second;
+  }
+  //! other
+  &--text_uppercase {
+    text-transform: uppercase;
+  }
+
+  &--line_height_sm {
+    line-height: 22px;
+  }
+
+  &--text_align_center {
+    text-align: center;
+    @media (min-width: 576px) {
+      &_media_sm {
+        text-align: center;
+      }
+    }
+    @media (min-width: 768px) {
+      &_media_md {
+        text-align: center;
+      }
+    }
+    @media (min-width: 992px) {
+      &_media_lg {
+        text-align: center;
+      }
+    }
+    @media (min-width: 1200px) {
+      &_media_xl {
+        text-align: center;
+      }
+    }
+    @media (min-width: 1400px) {
+      &_media_xxl {
+        text-align: center;
+      }
+    }
+  }
+  &--text_align_left {
+    text-align: left;
+    @media (min-width: 576px) {
+      &_media_sm {
+        text-align: left;
+      }
+    }
+    @media (min-width: 768px) {
+      &_media_md {
+        text-align: left;
+      }
+    }
+    @media (min-width: 992px) {
+      &_media_lg {
+        text-align: left;
+      }
+    }
+    @media (min-width: 1200px) {
+      &_media_xl {
+        text-align: left;
+      }
+    }
+    @media (min-width: 1400px) {
+      &_media_xxl {
+        text-align: left;
+      }
+    }
+  }
+
+  //! border sides
+  &--border_left_light_sm {
+    border-left: 0.1rem solid $color--white;
+  }
+  &--border_right_light_sm {
+    border-right: 0.1rem solid $color--white;
+  }
+}

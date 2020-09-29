@@ -1,0 +1,127 @@
+//!card
+@import "./variables";
+
+.card {
+  &__element {
+    &--position_absolute_center_slightly_bottom {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -15%);
+      @media (min-width: 576px) {
+        & {
+          transform: translate(-50%, -10%);
+        }
+      }
+      @media (min-width: 992px) {
+        & {
+          left: 25%;
+        }
+      }
+    }
+    &--top_sm {
+      top: -15%;
+    }
+
+    &--width_height {
+      width: 25px;
+      height: 25px;
+    }
+    &--shadow {
+      box-shadow: 0px 40px 10rem 3rem $color--white;
+    }
+    &--shadow_sm {
+      box-shadow: 0px 0px 2rem -1rem black;
+    }
+    &--border_lg {
+      border: 0.8rem solid white;
+    }
+    &--border_md {
+      border: 0.4rem solid white;
+    }
+    &--max_width {
+      max-width: 100%;
+    }
+    &--margin_center {
+      margin: 0 auto;
+      @media (max-width: 992px) {
+        &_media_max_lg {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+  &__link {
+    min-width: 1px;
+    &--hover_bark_red:hover .card--variant_black-red {
+      background-color: #580909;
+    }
+  }
+
+  // todo MOD
+  &--position_relative {
+    position: relative;
+  }
+  &--position_absolute {
+    position: absolute;
+  }
+
+  &--position_absolute_center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &--position_absolute_center_little_bottom {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -65%);
+    @media (min-width: 992px) {
+      &_sm_media_lg {
+        transform: translate(-50%, -60%);
+      }
+    }
+  }
+
+  &--center-horizontally {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &--max_width_md {
+    width: 170px;
+  }
+
+  &--padding_sm {
+    padding: 2em;
+    @media (min-width: 576px) {
+      &_media_sm {
+        padding-top: 3em;
+      }
+    }
+  }
+
+  &--display_flex {
+    display: flex;
+  }
+  &--display_inline-block {
+    display: inline-block;
+  }
+
+  &--border_radius {
+    border-radius: 50%;
+  }
+  &--border_md_white {
+    border: 0.3rem solid $color--white;
+  }
+
+  &--variant_red {
+    background-color: $bg_color--red;
+  }
+  &--variant_black-red {
+    background-color: $bg_color--black-red;
+  }
+}
